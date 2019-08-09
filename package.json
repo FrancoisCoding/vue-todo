@@ -2,14 +2,21 @@
   "name": "vue_todo",
   "version": "0.1.0",
   "private": true,
+  "description": "## Project setup ``` yarn install ```",
+  "author": "",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "main": "babel.config.js",
   "dependencies": {
+    "axios": "^0.19.0",
     "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+    "firebase": "^6.3.5",
+    "uuid": "^3.3.2",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.10.0",
@@ -42,5 +49,14 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/FrancoisCoding/vue-todo/issues"
+  },
+  "homepage": "https://github.com/FrancoisCoding/vue-todo#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrancoisCoding/vue-todo.git"
+  }
 }
