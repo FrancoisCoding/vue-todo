@@ -10,6 +10,22 @@
 
 <script>
 import uuid from "uuid";
+import firebase from "firebase";
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyCV35nsPS3WvMoyp6BYyrq9hhq4pGhheig",
+  authDomain: "francoisgamescontact.firebaseapp.com",
+  databaseURL: "https://francoisgamescontact.firebaseio.com",
+  projectId: "francoisgamescontact",
+  storageBucket: "",
+  messagingSenderId: "1037851501346",
+  appId: "1:1037851501346:web:42882627ea226811"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+var messagesRef = firebase.database().ref("vue todos");
 
 export default {
   name: "AddTodo",
@@ -31,9 +47,26 @@ export default {
       // Send up to parent
       this.$emit("add-todo", newTodo);
 
+      var newMessagesRef = messagesRef.push();
+      newMessagesRef.set({
+        todos: {
+          title: this.title,
+          description: this.description
+        }
+      });
+
       // Clear form
       this.title = "";
       this.description = "";
+    },
+
+    saveMessage(title, description) {
+      var newMessageRef = messagesRef.push();
+      newMessageRef.set({
+        title: this.title,
+        description: this.description
+      });
+      console.log("newMessageRef", newMessageRef);
     }
   }
 };
