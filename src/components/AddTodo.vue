@@ -30,6 +30,10 @@ export default {
       };
       // Send up to parent
       this.$emit("add-todo", newTodo);
+
+      // Clear form
+      this.title = "";
+      this.description = "";
     }
   }
 };

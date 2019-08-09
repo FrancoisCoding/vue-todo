@@ -23,7 +23,7 @@ export default {
       todos: [
         {
           id: 1,
-          title: "Todo One",
+          title: "Todo Example",
           description: "Example Todo",
           completed: false
         }
