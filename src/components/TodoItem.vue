@@ -5,6 +5,7 @@
       {{todo.title}}
       <button @click="$emit('del-todo', todo.id)" class="del">x</button>
     </p>
+    <p>Description : {{todo.description}}</p>
   </div>
 </template>
 
